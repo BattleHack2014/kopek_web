@@ -1,0 +1,5 @@
+User->Crm: Call some report
+note over User,Crm: REST call 
+Crm->SpecificReport: load counters
+SpecificReport->DB: load counters 
+

@@ -1,0 +1,7 @@
+threshold: 20000
+min_saving: 0.2
+servers:
+    - host: localhost
+      port: 11011
+      weight: 1
+      persistent: false

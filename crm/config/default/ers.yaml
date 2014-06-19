@@ -1,0 +1,39 @@
+general:
+    enable: 1
+
+# Настройка writer-ов системы. Перечислены writer-ы, используемые в системе
+# в порядке приоритета выполнения
+writer:
+    FileWriter: # Настройка writer-а, пишущего события в файлы
+        enable: 1 # Признак, использовать данный writer или нет
+        #path: "/serv/www/logs" # Папка для логов. ВНИМАНИЕ! Скрипт должен иметь права доступа на чтение/запись на данную папку
+        path: "/serv/logs"
+
+# Настройка reader-ов системы. Перечислены reader-ы, используемые в системе
+# в порядке приоритета выполнения
+reader:
+    # Обработчики взаимодействующие с файловыми логами
+    daily: # аргумент командной строки - название набора SpecificReader => [SpecificHandler-1, ... ,SpecificHandler-N]
+        class: FileReader
+            # Логи обрабатываются исходя из текущей даты, т.е. за сегодняшний день
+            # Параметр date позволяет подменить текущею дату
+        date: current
+        handler: # Названия классов SpecificHandlers
+            #- Register
+            #- UniqueSex
+            #- UniqueAge
+            #- UniqueSocialNetwork
+            #- UniqueActivities
+            #- UniqueWorks
+            #- UniqueVotes
+            #- UniqueCodes
+            #- CodesStatuses
+            - WorksStatuses
+            #- ContentLikesSocialNetworks
+            #- RejectionRequests
+
+    daily2:
+        class: DbReader
+        date: current
+        handler:
+            - AnswersForQuestions

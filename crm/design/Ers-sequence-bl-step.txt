@@ -1,0 +1,6 @@
+User->Crm: Call some business logic method
+note over User,Crm: REST call 
+Crm->Ers: Send event for logging
+note over Crm,Ers: Logic::getErs()->doWrite($project, $event, $userId, $sessId, $request, $params);
+Ers->FileWriter: doWrite()
+note over Ers,FileWriter: write event to log

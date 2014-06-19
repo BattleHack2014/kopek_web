@@ -1,0 +1,29 @@
+db_default:
+    host: dbimhonet.dev
+    dbname: imhocrm
+    user: imhoweb
+    password: imho4web
+    driver: pdo_mysql
+    charset: utf8
+    driverOptions:
+        PDO::ATTR_ERRMODE: PDO::ERRMODE_EXCEPTION
+
+db_master:
+    host: dbimhonet.dev
+    dbname: imhocrm
+    user: imhoweb
+    password: imho4web
+    driver: pdo_mysql
+    charset: utf8
+    driverOptions:
+        PDO::ATTR_ERRMODE: PDO::ERRMODE_EXCEPTION
+
+db_slave:
+    host: dbimhonet.dev
+    dbname: imhocrm
+    user: imhoweb
+    password: imho4web
+    driver: pdo_mysql
+    charset: utf8
+    driverOptions:
+        PDO::ATTR_ERRMODE: PDO::ERRMODE_EXCEPTION

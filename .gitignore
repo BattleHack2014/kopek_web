@@ -1,0 +1,4 @@
+crm/config/*/dev
+crm/vendor
+composer.lock
+.idea

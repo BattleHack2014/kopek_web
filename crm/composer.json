@@ -1,0 +1,27 @@
+{
+    "require": {
+        "silex/silex": "1.0.*",
+        "symfony/yaml": "2.1.*",
+        "doctrine/dbal": "2.2.*",
+        "symfony/validator": "2.1.*",
+        "symfony/event-dispatcher": "v2.1.7",
+        "symfony/browser-kit": "v2.1.7",
+        "symfony/security": "v2.1.8",
+        "symfony/console": "v2.2.0",
+        "alexshelkov/simpleacl": "2.0.14",
+        "doctrine/migrations": "dev-master",
+        "twig/twig": ">=1.8,<2.0-dev",
+        "symfony/twig-bridge": "~2.3"
+
+    },
+    "autoload": {
+        "psr-0": {
+            "Crm": "src",
+            "Project": "src",
+            "Config": "src",
+            "Ers": "src",
+            "Tool": "src"
+         }
+    },
+    "minimum-stability": "dev"
+}

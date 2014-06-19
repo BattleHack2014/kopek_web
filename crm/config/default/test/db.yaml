@@ -1,0 +1,29 @@
+db_default:
+    host: 127.0.0.1
+    dbname: imhocrm
+    user: imhocrm
+    password: imhocrm
+    driver: pdo_mysql
+    charset: utf8
+    driverOptions:
+        PDO::ATTR_ERRMODE: PDO::ERRMODE_EXCEPTION
+
+db_master:
+    host: 127.0.0.1
+    dbname: imhocrm
+    user: imhocrm
+    password: imhocrm
+    driver: pdo_mysql
+    charset: utf8
+    driverOptions:
+        PDO::ATTR_ERRMODE: PDO::ERRMODE_EXCEPTION
+
+db_slave:
+    host: 127.0.0.1
+    dbname: imhocrm
+    user: imhocrm
+    password: imhocrm
+    driver: pdo_mysql
+    charset: utf8
+    driverOptions:
+        PDO::ATTR_ERRMODE: PDO::ERRMODE_EXCEPTION

@@ -1,0 +1,141 @@
+Dashboard: # Название ресурса для Acl
+    id: 1
+    label: 'Главная'
+    url: 'dashboard'
+    icon: 'icon-desktop'
+    css: 'nred'
+    default: true # Права по умолчанию для нового юзера
+    items:
+
+Administration: # Название ресурса для Acl
+    id: 2
+    label: 'Администрация'
+    url: 'administration'
+    icon: 'icon-user'
+    css: 'nlightblue'
+    default: false # Права по умолчанию для нового юзера
+    items:
+        100:
+            icon: 'file-alt'
+            label: Пользователи и права
+            url: administration/users
+
+Sections:
+    id: 3
+    label: 'Разделы'
+    url: 'sections'
+    icon: 'icon-list-alt'
+    css: 'nviolet'
+    default: true # Права по умолчанию для нового юзера
+    items:
+        200:
+            icon: 'file-alt'
+            label: 'Модерация контента'
+            url: 'sections/content-moderation'
+        201:
+            icon: 'file-alt'
+            label: 'Модерация комментариев'
+            url: 'sections/moderation-comments'
+        202:
+            icon: 'file-alt'
+            label: 'Проверка кода'
+            url: 'sections/code-validation'
+        203:
+            icon: 'file-alt'
+            label: 'Викторины'
+            url: 'sections/quiz'
+
+Statistic:
+    id: 4
+    label: 'Статистика'
+    url: 'statistics'
+    icon: 'icon-bar-chart'
+    css: 'nblue'
+    default: false # Права по умолчанию для нового юзера
+    items:
+        300:
+            icon: 'file-alt'
+            label: 'Участники - период'
+            url: 'reports/unique-time'
+        301:
+            icon: 'file-alt'
+            label: 'Участники - пол'
+            url: 'reports/unique-sex'
+        302:
+            icon: 'file-alt'
+            label: 'Участники - возраст'
+            url: 'reports/unique-age'
+
+        303:
+            icon: 'file-alt'
+            label: 'Участники - соцсети'
+            url: 'reports/unique-social-networks'
+
+        304:
+            icon: 'file-alt'
+            label: 'Участники - активности'
+            url: 'reports/unique-activity'
+
+        305:
+            icon: 'file-alt'
+            label: 'Участники - работы'
+            url: 'reports/unique-works'
+
+        306:
+            icon: 'file-alt'
+            label: 'Участники - голоса'
+            url: 'reports/unique-votes'
+
+        307:
+            icon: 'file-alt'
+            label: 'Участники - коды'
+            url: 'reports/unique-codes'
+
+        308:
+            icon: 'file-alt'
+            label: 'Викторина - результаты'
+            url: 'reports/tests-results'
+
+        309:
+            icon: 'file-alt'
+            label: 'Работы - статусы'
+            url: 'reports/works-statuses'
+
+        310:
+            icon: 'file-alt'
+            label: 'Работы - шкала оценок'
+            url: 'reports/works-ratings'
+
+        311:
+            icon: 'file-alt'
+            label: 'Друзья - статусы'
+            url: 'reports/invitations-statuses'
+
+        312:
+            icon: 'file-alt'
+            label: 'Коды - статусы'
+            url: 'reports/codes-statuses'
+
+        313:
+            icon: 'file-alt'
+            label: 'Лайки за контент - соцсети'
+            url: 'reports/likes-social-networks'
+
+        314:
+            icon: 'file-alt'
+            label: 'Призеры - типы призов'
+            url: 'reports/winners-by-prize'
+
+        315:
+            icon: 'file-alt'
+            label: 'Комментарии - статусы'
+            url: 'reports/works-comments-statuses'
+
+        316:
+            icon: 'file-alt'
+            label: 'Заявки на отказ - типы'
+            url: 'reports/rejection-requests'
+        317:
+            icon: 'file-alt'
+            label: 'Статистика по ответам'
+            url: 'reports/answers-stats'
