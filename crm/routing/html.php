@@ -15,6 +15,16 @@ $app->register(new Silex\Provider\TwigServiceProvider(), array(
 /**
  * Custom route in most cases redirects to original {logic}/{action} route
  */
+$app->match('/', function () use ($app) {
+    return $app->handle(
+        Request::create('/index/index', 'GET'),
+        HttpKernelInterface::SUB_REQUEST
+    );
+});
+
+/**
+ * Custom route in most cases redirects to original {logic}/{action} route
+ */
 $app->match('/example', function () use ($app) {
     Logic::getRequest()->request->add(array('id' => $id));
     return $app->handle(
@@ -49,7 +59,10 @@ $app->match('/{logic}/{action}', function ($logic, $action) use ($app) {
     }
 
     $params = $logic_object->execute($action, $request->request->all());
-    return new Response ($app['twig']->render($template, $params));
+    $body = $app['twig']->render('header.twig');
+    $body .= $app['twig']->render($template, $params);
+    $body .= $app['twig']->render('footer.twig');
+    return new Response ($body);
 });
 
 /**

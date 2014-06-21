@@ -11,8 +11,8 @@
         "alexshelkov/simpleacl": "2.0.14",
         "doctrine/migrations": "dev-master",
         "twig/twig": ">=1.8,<2.0-dev",
-        "symfony/twig-bridge": "~2.3"
-
+        "symfony/twig-bridge": "~2.3",
+        "facebook/php-sdk-v4": "dev-master"
     },
     "autoload": {
         "psr-0": {
