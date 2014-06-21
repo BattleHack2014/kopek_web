@@ -1,6 +1,7 @@
 <?php
 namespace Crm\Model\Goal;
 
+use Crm\Model\Model;
 
 class Goal extends Model {
     const TABLE = 'goal';
@@ -10,6 +11,7 @@ class Goal extends Model {
     const STATUS_DRAFT          = 'DRAFT';
     const STATUS_VOTING         = 'VOTING';
     const STATUS_WINNER_FRIENDS = 'WINNER_FRIENDS';
+    const STATUS_NEW            = 'NEW';
     const STATUS_WINNER_USER    = 'WINNER_USER';
 
     public $id;
