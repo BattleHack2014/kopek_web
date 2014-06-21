@@ -27,10 +27,13 @@ use Facebook\GraphUser;
 class Index extends Logic {
 
     public function actionIndex() {
-        $result = FacebookSession::setDefaultApplication('266389886878271', '7d243c984b5ca08387fd690c3fe4adf9');
-        
+        FacebookSession::setDefaultApplication(
+            $this->getConfig('config')->get('appId'),
+            $this->getConfig('config')->get('appSecret')
+        );
+
         $helper = new FacebookRedirectLoginHelper(
-            'http://www.battlehack2014.com:5002/index/index'
+            $this->getConfig('config')->get('base_url') . '/index/index'
         );
         
         $session = $helper->getSessionFromRedirect();

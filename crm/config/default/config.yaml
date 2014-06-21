@@ -1,4 +1,3 @@
-imhonet_domain: ppipkin.dev
-imhocrm_domain: crm.ppipkin.dev
-vk_app_id: 3706206
-fb_app_id: 167182473460549
+base_url: http://www.battlehack2014.com
+appId: 266389886878271
+appSecret: 7d243c984b5ca08387fd690c3fe4adf9
