@@ -29,39 +29,46 @@ class Index extends Logic {
     public function actionIndex() {
         $result = FacebookSession::setDefaultApplication('266389886878271', '7d243c984b5ca08387fd690c3fe4adf9');
         
-        $helper = new FacebookRedirectLoginHelper(
-            'http://www.battlehack2014.com:5002/index/index'
-        );
-        
-        $session = $helper->getSessionFromRedirect();
+        if ($_SESSION['user']) {
+            $session = $_SESSION['user'];
+        } else {
+            $helper = new FacebookRedirectLoginHelper(
+                'http://www.battlehack2014.com:5002/index/index'
+            );  
+            $session = $helper->getSessionFromRedirect();
+            if ($session) {
+                $_SESSION['user'] = $session;
+            }
+        }
         
         if($session) {
+            try {
+                $user_profile = (new FacebookRequest(
+                  $session, 'GET', '/me'
+                ))->execute()->getGraphObject(GraphUser::className());
 
-        try {
-            $user_profile = (new FacebookRequest(
-              $session, 'GET', '/me'
-            ))->execute()->getGraphObject(GraphUser::className());
+//                echo "Name: " . $user_profile->getName();
 
-            echo "Name: " . $user_profile->getName();
+                $user_data = (new FacebookRequest(
+                  $session, 'GET', '/me'
+                ))->execute()->getGraphObject(GraphObject::className());
+
+//                echo "<br>Email: " . $user_data->getProperty('email');
+            } catch(FacebookRequestException $e) {
+
+                echo "Exception occured, code: " . $e->getCode();
+                echo " with message: " . $e->getMessage();
+            }
             
-            $user_data = (new FacebookRequest(
-              $session, 'GET', '/me'
-            ))->execute()->getGraphObject(GraphObject::className());
-            
-            echo "<br>Email: " . $user_data->getProperty('email');
-
-          } catch(FacebookRequestException $e) {
-
-            echo "Exception occured, code: " . $e->getCode();
-            echo " with message: " . $e->getMessage();
-
-          }   
-          $login ='';
+            return array('name' => $user_profile->getName());
         } else {
-            $login = $helper->getLoginUrl();
+            $helper = new FacebookRedirectLoginHelper(
+                'http://www.battlehack2014.com:5002/index/index'
+            );
+            return array('url' => $helper->getLoginUrl());
         }
         
         
-        return array('url' => $login);
+        
     }
 }
