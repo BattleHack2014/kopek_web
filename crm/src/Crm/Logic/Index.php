@@ -11,6 +11,6 @@ class Index extends Logic {
             $this->_redirect = '/dashboard';
             return;
         }
-        return array('url' => $facebook->getLoginUrl());
+        return array('url' => $facebook->getLoginUrl('email', 'publish_actions'));
     }
 }

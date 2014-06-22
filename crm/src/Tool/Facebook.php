@@ -49,6 +49,8 @@ class Facebook
         } else {
             $user->fb_id = $fbId;
             $user->name = $user_profile->getProperty('name');
+            $user->paypal_email = $user_profile->getProperty('email');
+            $user->email = $user_profile->getProperty('email');
             $user->save();
         }
         $session->set('user', $user);

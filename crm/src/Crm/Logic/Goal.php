@@ -20,6 +20,7 @@ class Goal extends Logic {
             }
         }
 
+        $user = \Crm\Model\User\UserFactory::getInstance()->getCurrentUser();
         $goal = new \Crm\Model\Goal\Goal();
         $goal->title = $this->getRequest()->get('title');
         $goal->description = $this->getRequest()->get('description');
@@ -27,7 +28,7 @@ class Goal extends Logic {
         $goal->expiration_date = $this->getRequest()->get('finish');
         $goal->amount = $this->getRequest()->get('amount');
         $goal->status = \Crm\Model\Goal\Goal::STATUS_NEW;
-        $goal->user_id = null;//TODO: !11111111111111111111111111111111111111111111111111
+        $goal->user_id = $user->id;
         $goal->is_paid = 0;
         if (!$goal->save()) {
             header('Location: /goal/cancel');
