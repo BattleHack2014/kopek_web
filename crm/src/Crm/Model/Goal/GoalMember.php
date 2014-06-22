@@ -1,6 +1,7 @@
 <?php
 namespace Crm\Model\Goal;
 
+use Crm\Model\Model;
 
 class GoalMember extends Model {
     const TABLE = 'goal_member';
