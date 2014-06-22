@@ -1,5 +1,9 @@
 <div class="container">
-<a href="{{ data.url }}">login with FB</a>
+{% if data.url is defined %}
+    <button onclick="parent.location='{{ data.url }}'">login with FB</button>
+{% else %}
+    Hello {{ data.name }}.
+{% endif %}
     <!-- Jumbotron -->
     <div class="jumbotron">
         <h1>Gain it!</h1>
