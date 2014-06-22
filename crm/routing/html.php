@@ -25,6 +25,36 @@ $app->match('/', function () use ($app) {
 /**
  * Custom route in most cases redirects to original {logic}/{action} route
  */
+$app->match('/facebook', function () use ($app) {
+    return $app->handle(
+        Request::create('/facebook/index', 'GET'),
+        HttpKernelInterface::SUB_REQUEST
+    );
+});
+
+/**
+ * Custom route in most cases redirects to original {logic}/{action} route
+ */
+$app->match('/goal', function () use ($app) {
+    return $app->handle(
+        Request::create('/goal/index', 'GET'),
+        HttpKernelInterface::SUB_REQUEST
+    );
+});
+
+/**
+ * Custom route in most cases redirects to original {logic}/{action} route
+ */
+$app->match('/dashboard', function () use ($app) {
+    return $app->handle(
+        Request::create('/dashboard/index', 'GET'),
+        HttpKernelInterface::SUB_REQUEST
+    );
+});
+
+/**
+ * Custom route in most cases redirects to original {logic}/{action} route
+ */
 $app->match('/example', function () use ($app) {
     Logic::getRequest()->request->add(array('id' => $id));
     return $app->handle(
@@ -59,10 +89,16 @@ $app->match('/{logic}/{action}', function ($logic, $action) use ($app) {
     }
 
     $params = $logic_object->execute($action, $request->request->all());
-    $body = $app['twig']->render('header.twig');
-    $body .= $app['twig']->render($template, $params);
-    $body .= $app['twig']->render('footer.twig');
-    return new Response ($body);
+
+    if (isset($params[Logic::OUTPUT_REDIRECT])) {
+        return $app->redirect($params[Logic::OUTPUT_REDIRECT]);
+    } else {
+        $body = $app['twig']->render('header.twig');
+        $body .= $app['twig']->render($template, $params);
+        $body .= $app['twig']->render('footer.twig');
+        return new Response ($body);
+    }
+
 });
 
 /**

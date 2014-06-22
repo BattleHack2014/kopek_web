@@ -1,10 +1,13 @@
 <?php
 namespace Crm\Logic;
 
-
 use Tool\AdaptivePayments;
 
 class Goal extends Logic {
+    public function actionIndex() {
+        return array();
+    }
+
     public function actionCreate () {
         return array();
     }
