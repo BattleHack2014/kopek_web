@@ -5,7 +5,7 @@ use Tool\AdaptivePayments;
 
 class Goal extends Logic {
     public function actionIndex() {
-        return array();
+        return $this->actionList();
     }
 
     public function actionCreate () {
