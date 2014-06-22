@@ -25,10 +25,10 @@ class Goal extends Model {
     public $preapproval_key;
     public $is_paid;
 
-    public function loadRelated() {
-
-        return $this;
-    }
+//    public function loadRelated() {
+//
+//        return $this;
+//    }
 
 
     public function translateStatus() {

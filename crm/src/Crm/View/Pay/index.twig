@@ -1,0 +1,7 @@
+Title: {{ data.goal.title }}<br />
+DEScription: {{ data.goal.description }}<br />
+
+<form action="pay/process?goal_id={{ data.goal.id }}" method="POST">
+    Amount: <input type="text" name="amount" /><br />
+    <input type="submit" value="Submit" />
+</form>

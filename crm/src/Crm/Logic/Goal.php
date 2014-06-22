@@ -82,6 +82,6 @@ class Goal extends Logic {
 
     public function actionList() {
 
-        return array('create'=>$this->getRequest()->get('create', false));
+        return array('create'=>$this->getRequest()->get('create', false), 'pay'=>$this->getRequest()->get('pay', false));
     }
 }

@@ -41,6 +41,15 @@ $app->match('/goal', function () use ($app) {
         HttpKernelInterface::SUB_REQUEST
     );
 });
+/**
+ * Custom route in most cases redirects to original {logic}/{action} route
+ */
+$app->match('/pay', function () use ($app) {
+    return $app->handle(
+        Request::create('/pay/index', 'GET'),
+        HttpKernelInterface::SUB_REQUEST
+    );
+});
 
 /**
  * Custom route in most cases redirects to original {logic}/{action} route

@@ -2,8 +2,18 @@
 ВСе ок создано
     <br />
     <br />
-{% else %}
+{% elseif data.create == "error" %}
     ВСе пиздец, не создано
+    <br />
+    <br />
+{% endif %}
+
+{% if data.pay == "ok" %}
+    ВСе ок участвуешь
+    <br />
+    <br />
+{% elseif data.pay == "error" %}
+    ВСе пиздец, не участвуешь, нажал на бутн сохранить
     <br />
     <br />
 {% endif %}
