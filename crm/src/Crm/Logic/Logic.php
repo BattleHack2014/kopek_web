@@ -220,7 +220,6 @@ abstract class Logic {
             self::$session = new Session($storage);
             self::$session->start();
         }
-
         return self::$session;
     }
 

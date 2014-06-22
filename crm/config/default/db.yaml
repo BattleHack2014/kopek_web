@@ -1,28 +1,28 @@
 db_default:
     host: localhost
-    dbname: kopek
-    user: kopek
-    password: kopek
+    dbname: goal
+    user: goal
+    password: goal
     driver: pdo_mysql
     charset: utf8
     driverOptions:
         PDO::ATTR_ERRMODE: PDO::ERRMODE_EXCEPTION
 
 db_master:
-  host: localhost
-    dbname: kopek
-    user: kopek
-    password: kopek
+    host: localhost
+    dbname: goal
+    user: goal
+    password: goal
     driver: pdo_mysql
     charset: utf8
     driverOptions:
         PDO::ATTR_ERRMODE: PDO::ERRMODE_EXCEPTION
 
 db_slave:
-  host: localhost
-    dbname: kopek
-    user: kopek
-    password: kopek
+    host: localhost
+    dbname: goal
+    user: goal
+    password: goal
     driver: pdo_mysql
     charset: utf8
     driverOptions:

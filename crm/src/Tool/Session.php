@@ -9,8 +9,8 @@ class Session extends SymfonySession
 {
     const KEY_IS_AUTH = 'is_auth';
 
-    public function setAuth($is) {
-        $this->set(self::KEY_IS_AUTH, $is);
+    public function setAuth($id) {
+        $this->set(self::KEY_IS_AUTH, $id);
     }
 
     public function isAuth() {
